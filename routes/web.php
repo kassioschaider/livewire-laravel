@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Livewire\Home;
+use App\Http\Livewire\Product\ProductList;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +18,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/home', Home::class);
+
+// Route::get('/product', ProductList::class);
+// Route::get('/product/add', 'ProductController@create')->name('form_add_product');
+// Route::post('/product/add', 'ProductController@store');
+// Route::delete('/product/{id}', 'ProductController@destroy');

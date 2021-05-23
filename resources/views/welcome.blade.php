@@ -9,7 +9,8 @@
         @livewireStyles
     </head>
     <body class="antialiased">
-        <livewire:product-create/>
+        {{-- <livewire:product.product-edit :product="1"/> --}}
+        <livewire:product.product-list />
         @livewireScripts
     </body>
 </html>
