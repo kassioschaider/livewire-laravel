@@ -27,6 +27,16 @@
             </div>
         </div>
 
+        <div class="pb-4">
+            @if (session()->has('message'))
+            <div class="bg-grey-100 border-t border-b border-dark-500 text-dark-700 px-4 py-3">
+                <div class="text-sm">
+                    {{ session('message') }}
+                </div>
+            </div>
+            @endif
+        </div>
+
         <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
             CREATE
         </button>

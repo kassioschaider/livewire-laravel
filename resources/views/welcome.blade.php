@@ -9,7 +9,7 @@
         @livewireStyles
     </head>
     <body class="antialiased">
-        <livewire:product-create></livewire:product-create>
+        <livewire:product-create/>
         @livewireScripts
     </body>
 </html>

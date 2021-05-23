@@ -11,9 +11,14 @@ class ProductCreate extends Component
     public $name;
 
     protected $rules = [
-        'bar_code' => 'required',
-        'name' => 'required',
+        'bar_code' => 'required|min:13',
+        'name' => 'required|min:3',
     ];
+
+    public function updated($propertyName)
+    {
+        $this->validateOnly($propertyName);
+    }
 
     public function create()
     {
@@ -22,6 +27,10 @@ class ProductCreate extends Component
             'bar_code' => $this->bar_code,
             'name' => $this->name,
         ]);
+
+        $this->bar_code = $this->name = null;
+
+        session()->flash('message', 'Create successfully!');
     }
 
     public function render()
