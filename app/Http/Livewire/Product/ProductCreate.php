@@ -11,7 +11,7 @@ class ProductCreate extends Component
     public $name;
 
     protected $rules = [
-        'bar_code' => 'required|min:13',
+        'bar_code' => 'required|min:3',
         'name' => 'required|min:3',
     ];
 
@@ -35,6 +35,6 @@ class ProductCreate extends Component
 
     public function render()
     {
-        return view('livewire.product-create');
+        return view('livewire.product.product-create');
     }
 }

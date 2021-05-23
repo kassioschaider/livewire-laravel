@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Home;
+use App\Http\Livewire\Product\ProductCreate;
 use App\Http\Livewire\Product\ProductList;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,8 @@ Route::get('/', function () {
 
 Route::get('/home', Home::class);
 
-// Route::get('/product', ProductList::class);
-// Route::get('/product/add', 'ProductController@create')->name('form_add_product');
+Route::get('/product', ProductList::class)->name('list_product');
+// Route::get('/product/add', ProductCreate::class)->name('form_add_product');
+// Route::post('/product/add', ProductCreate::class);
 // Route::post('/product/add', 'ProductController@store');
 // Route::delete('/product/{id}', 'ProductController@destroy');

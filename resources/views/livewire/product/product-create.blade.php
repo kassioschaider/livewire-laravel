@@ -2,7 +2,7 @@
     <h2 class="pb-8 pt-8 text-2xl">Create Product</h2>
     <form class="w-full max-w-lg" wire:submit.prevent="create" method="post">
         <div class="flex flex-wrap -mx-3 mb-6">
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label for="bar_code" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Bar Code</label>
 
                 <input type="text" name="bar_code" id="bar_code" wire:model="bar_code"
@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
                 <label for="name" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name</label>
 
                 <input type="text" name="name" id="name" wire:model="name"
@@ -24,6 +24,12 @@
                     {{$message}}
                     @enderror
                 </div>
+            </div>
+
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+                    CREATE
+                </button>
             </div>
         </div>
 
@@ -36,9 +42,11 @@
             </div>
             @endif
         </div>
-
-        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-            CREATE
-        </button>
     </form>
+
+    {{-- <div class="pt-8">
+        <a href="{{ route('list_product') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+            LIST
+        </a>
+    </div> --}}
 </div>

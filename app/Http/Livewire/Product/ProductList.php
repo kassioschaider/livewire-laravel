@@ -10,7 +10,6 @@ class ProductList extends Component
     public function render()
     {
         $products = Product::get();
-
         return view('livewire.product.product-list', compact('products'));
     }
 }

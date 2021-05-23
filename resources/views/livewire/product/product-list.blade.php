@@ -1,10 +1,15 @@
-<div class="container justify-center grid grid-flow-row">
-    <h2 class="pb-8 pt-8 text-2xl text-center">List Product</h2>
+@extends('layouts.app')
 
-    <div class="p-8">
-        <a href="#" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+@section('content')
+<div class="container justify-center grid grid-flow-row">
+    <h2 class="pb-8 pt-8 text-2xl text-center">Product</h2>
+
+    <livewire:product.product-create />
+
+    {{-- <div class="p-8">
+        <a href="{{ route('form_add_product') }}" class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
         Add Product</a>
-    </div>
+    </div> --}}
     <ul class="list-inside">
     @foreach ($products as $product)
         <li class="flex justify-between bg-gray-100">
@@ -27,3 +32,4 @@
     @endforeach
     </ul>
 </div>
+@endsection
