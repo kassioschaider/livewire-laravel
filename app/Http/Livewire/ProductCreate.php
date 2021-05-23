@@ -2,22 +2,26 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Product;
 use Livewire\Component;
 
 class ProductCreate extends Component
 {
-    public $barCode;
+    public $bar_code;
     public $name;
 
     protected $rules = [
-        'barCode' => 'required',
+        'bar_code' => 'required',
         'name' => 'required',
     ];
 
     public function create()
     {
         $this->validate();
-        dd($this->name, $this->barCode);
+        Product::create([
+            'bar_code' => $this->bar_code,
+            'name' => $this->name,
+        ]);
     }
 
     public function render()

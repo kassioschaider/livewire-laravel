@@ -1,26 +1,34 @@
-<div>
-    <h2>Create Product</h2>
+<div class="container justify-center grid grid-flow-row">
+    <h2 class="pb-8 pt-8 text-2xl">Create Product</h2>
+    <form class="w-full max-w-lg" wire:submit.prevent="create" method="post">
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label for="bar_code" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Bar Code</label>
 
-    <form wire:submit.prevent="create" method="post">
+                <input type="text" name="bar_code" id="bar_code" wire:model="bar_code"
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                <div class="error-message">
+                    @error('bar_code')
+                    {{$message}}
+                    @enderror
+                </div>
+            </div>
 
-        <label for="barCode">Bar Code</label>
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <label for="name" class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">Name</label>
 
-        <input type="text" wire:model="barCode">
-        <div class="error-message">
-            @error('barCode')
-            {{$message}}
-            @enderror
+                <input type="text" name="name" id="name" wire:model="name"
+                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white">
+                <div class="error-message">
+                    @error('name')
+                    {{$message}}
+                    @enderror
+                </div>
+            </div>
         </div>
 
-        <label for="name">Name</label>
-
-        <input type="text" wire:model="name">
-        <div class="error-message">
-            @error('name')
-            {{$message}}
-            @enderror
-        </div>
-
-        <button class="btn btn-primary">Add</button>
+        <button class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+            CREATE
+        </button>
     </form>
 </div>
